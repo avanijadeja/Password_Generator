@@ -20,10 +20,17 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  
+  // call getPrompts() function. it return values true or false. and return value store in correctPrompts variables.
+  var correctPrompts = getPrompts();
 
-  passwordText.value = password;
+  //if value is true then generatePassword function will call.
+  if(correctPrompts)
+  {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+  }
 
 }
 
@@ -59,6 +66,14 @@ function getPrompts(){
   {
     choiceArr = choiceArr.concat(upperCaseArr);
   }
+
+  //confirm method ask user for special characters if they press ok button then special characters use and click on cancle button special characters not used.if special characters use then special character array values concat with choiceArr array values.
+  if (confirm("would you like special characters in your password?"))
+  {
+    choiceArr = choiceArr.concat(specialCharArr);
+  }
+
+
 
   //confirm method ask user for numbers if they press ok button then numbers use and click on cancle button numbers not used.if numbers use then numberArr array values concat with choiceArr array values.
   if (confirm("would you like numbers in your password?"))
