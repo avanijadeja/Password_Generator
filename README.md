@@ -27,7 +27,7 @@ N/A
 
 ## Usage 
 
-Password Generator Deployed website link - 
+Password Generator Deployed website link -  https://avanijadeja.github.io/Password_Generator/
 
 Here you can see screenshots of Password Generator website.
 
